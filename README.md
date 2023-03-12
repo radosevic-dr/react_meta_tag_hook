@@ -7,6 +7,7 @@ It's  a good idea to have unique and relevant meta tags for all pages of your Re
 ### Creating meta data
 
 Lets first create js file where we will store our meta data. I will put it in data folder.
+Keyword represent name or property of meta tag and the value is content of it.
 
 ```js
 // data/metaData.js
