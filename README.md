@@ -69,10 +69,10 @@ Now we need to apply hook to child component. I will use Home component for it.
 // pages/Home.jsx
 
 import { NavLink } from "react-router-dom";
-import { useMetaTags } from "../hooks";
+import { useMetaData } from "../hooks";
 
 export const Home = ({ metaData }) => {
-  useMetaTags(metaData);
+  useMetaData(metaData);
   return (
     <div>
       {/* Rest of code here */}
