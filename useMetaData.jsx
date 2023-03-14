@@ -1,11 +1,7 @@
 import { useEffect } from "react";
 
-export const useMetaData = (metaData) => {
+export const useMetaTags = (metaData) => {
   useEffect(() => {
-    // remove existing meta tags
-    const existingMetaTags = document.querySelectorAll("meta:not([charset]):not([name='viewport'])");
-    existingMetaTags.forEach((tag) => tag.parentNode.removeChild(tag));
-
     // adding specific meta tags
     Object.entries(metaData).forEach(([name, content]) => {
       const tag = document.createElement("meta");
@@ -21,9 +17,17 @@ export const useMetaData = (metaData) => {
     });
 
     return () => {
-      // remove meta tags when component unmounts
-      const existingMetaTags = document.querySelectorAll("meta");
-      existingMetaTags.forEach((tag) => tag.parentNode.removeChild(tag));
+      // remove dynamically added meta tags when component unmounts
+      Object.entries(metaData).forEach(([name, content]) => {
+        const selector = name.startsWith("og:")
+          ? `meta[property="${name}"]`
+          : `meta[name="${name}"]`;
+        const tag = document.head.querySelector(selector);
+        if (tag) {
+          document.head.removeChild(tag);
+        }
+      });
     };
   }, [metaData]);
 };
+
