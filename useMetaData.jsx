@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 
-export const useMetaTags = (metaData) => {
+export const useMetaData = (metaData) => {
   useEffect(() => {
     // remove existing meta tags
-    const existingMetaTags = document.querySelectorAll("meta");
+    const existingMetaTags = document.querySelectorAll("meta:not([charset]):not([name='viewport'])");
     existingMetaTags.forEach((tag) => tag.parentNode.removeChild(tag));
 
     // adding specific meta tags
