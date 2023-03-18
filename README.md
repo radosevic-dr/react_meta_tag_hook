@@ -1,6 +1,6 @@
 # React Hook for inserting meta tags on each page
 
-It's  a good idea to have unique and relevant meta tags for all pages of your React project. This will help search engines understand the content of your pages and display more accurate and informative search results for users. You can use this hook to set Open Graph meta tags as well. You would just need to specify the appropriate property names and values in the metaData object. Also to mention, do not touch viewport and charset meta tags from index.html.
+It's  a good idea to have unique and relevant meta tags for all pages of your project. This will help search engines understand the content of your pages and display more accurate and informative search results for users. You can use this hook to set Open Graph meta tags as well. You would just need to specify the appropriate property names and values in the metaData object. Also to mention, do not touch viewport and charset meta tags from index.html.
 
 ## Example
 
